@@ -5,7 +5,11 @@ public class src {
     public ArrayList<Integer> convert(int [] array){
         ArrayList<Integer> convertArray = new ArrayList<Integer>(array.length);
         array = this.filter(array);
-        this.sort(array);
+        array = this.sort(array);
+
+        for(int i = 0; i < array.length; i++){
+            convertArray.add(array[i]);
+        }
 
         return convertArray;
     }
@@ -25,10 +29,14 @@ public class src {
             if(!notSwapped) break;
         }
                                                    //use for debugging delete later
+        System.out.print("This is the sorted array: ");
         for(int x : array){
             System.out.print(x + ", ");
         }
         System.out.println();
+                                                    //end debug
+
+
         return array;
     }
 
@@ -46,12 +54,14 @@ public class src {
         for(int i =0; i < arrayFiltered.length; i++ ){
             arrayFiltered[i] = arrayFilteredAL.get(i);
         }
+
+        System.out.print("This is the filtered array: ");
         for(int x : arrayFiltered){
             System.out.print(x + ", ");
         }
         System.out.println();
 
-            //end debug
+                                                    //end debug
                     
         return arrayFiltered;
     }
